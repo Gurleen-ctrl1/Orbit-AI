@@ -1,0 +1,25 @@
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore Virtual Environments (Don't upload your library folders!)
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Ignore Large Data Files (GitHub has a 100MB limit)
+data/raw/*
+data/processed/*
+*.pdf
+*.jsonl
+
+# Ignore Model Files (Too huge for Git)
+*.gguf
+*.pt
+*.bin
+models/adapters/*
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
