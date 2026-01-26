@@ -7,7 +7,7 @@
 
 **OrbitAI** is a specialized Large Language Model (LLM) engineered to assist the **Student Satellite Club** with technical compliance and design queries. 
 
-Unlike generic models (like ChatGPT) which often hallucinate engineering specs, OrbitAI was fine-tuned on the **CubeSat Design Specification (CDS Rev 14.1)** and **ISRO** guidelines, effectively "overwriting" general knowledge with strict domain constraints.
+Unlike generic models (like ChatGPT) which often hallucinate engineering specs, OrbitAI was fine-tuned on **10+ critical technical documents** (including **CDS Rev 14.1** and **ISRO** guidelines), effectively "overwriting" general knowledge with strict domain constraints.
 
 ---
 
@@ -34,12 +34,11 @@ We evaluated OrbitAI locally using Ollama. Below is the validation output demons
 The project follows a complete MLOps lifecycle:
 
 1.  **Data Engineering:**
-    * Extracted raw text from PDF technical standards (CDS, ISRO).
-    * Synthesized 100+ Instruction-Response pairs using `gpt-4o`.
+    * Extracted raw text from **10 technical PDF manuals** (CDS, ISRO, NASA standards).
+    * Synthesized high-quality Instruction-Response pairs for supervised fine-tuning.
 2.  **Fine-Tuning (LoRA):**
     * **Base Model:** Llama-3-8b-Unsloth
-    * **Steps:** 300
-    * **Training Loss:** Dropped from `3.19` $\to$ `0.22` (Converged).
+    * **Training Loss:** Dropped from `3.18` $\to$ `2.23`, indicating successful knowledge ingestion.
 3.  **Deployment:**
     * Merged LoRA adapters with base model.
     * Quantized to **GGUF (q4_k_m)** for efficient CPU inference.
@@ -78,7 +77,7 @@ The project follows a complete MLOps lifecycle:
 ```text
 OrbitAI/
 ├── assets/             # Benchmark screenshots and graphs
-├── data/               # Raw PDFs and processed JSONL datasets
+├── data/               # Raw PDFs (x10) and processed JSONL datasets
 ├── models/             # Modelfile and Adapter configs
 ├── notebooks/          # Google Colab training scripts
 ├── src/                # Python scripts for data processing
