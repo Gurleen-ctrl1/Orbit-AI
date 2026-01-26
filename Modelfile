@@ -1,0 +1,24 @@
+# 1. Point to your GGUF file
+FROM ./models/orbitai.gguf
+
+# 2. THE FIX: Match the Training Data EXACTLY
+# We added "### Input:" because the model was trained to expect it.
+TEMPLATE """Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+{{ .Prompt }}
+
+### Input:
+
+### Response:
+"""
+
+# 3. Stop Parameters (Clean Output)
+PARAMETER stop "### Instruction:"
+PARAMETER stop "### Input:"
+PARAMETER stop "### Response:"
+PARAMETER stop "<|end_of_text|>"
+
+# 4. Settings (Precision)
+PARAMETER temperature 0.1
+PARAMETER num_ctx 4096
