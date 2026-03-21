@@ -57,7 +57,7 @@ The project follows a complete MLOps lifecycle:
 
 ### Setup
 1.  **Download the Model:**
-    Due to GitHub file size limits, download `orbitai.gguf` from [Insert Link if hosted] or generate it using the notebooks provided. Place it in the `models/` folder.
+    Due to GitHub file size limits, download `orbitai.gguf` from https://drive.google.com/file/d/1SsurUrELyIU3dM_Rw19oWyRMX-aVz7ag/view?usp=drive_link or generate it using the notebooks provided. Place it in the `models/` folder.
 
 2.  **Register the Model:**
     Run this command in your terminal:
