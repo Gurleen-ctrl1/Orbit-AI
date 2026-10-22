@@ -160,7 +160,7 @@ and associated launch safety constraints.
 
 ## Benchmark Screenshots
 
-![Combined Benchmarks](assets/CubeSat Specifications Terminal Window.png)
+![Combined Benchmarks](assets/gurleen.png)
 
 ---
 
